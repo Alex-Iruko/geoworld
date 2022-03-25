@@ -16,13 +16,13 @@
 <?php  require_once 'header.php'; ?>
 <?php
 require_once 'inc/manager-db.php';
-if (empty($_GET['Continent'])) {
-  $continent= 'Asia';
-}
-else{
-  $continent = $_GET['Continent'];
+if (empty($_GET['Continent'])){
+  $continent='Asia';
+}else{
+  $continent=$_GET['Continent'];
 }
 $desPays = getCountriesByContinent($continent);
+//$capitales= getCapital($continent)
 ?>
 
 <main role="main" class="flex-shrink-0">
@@ -33,30 +33,29 @@ $desPays = getCountriesByContinent($continent);
      <table class="table">
          <tr>
            <th>Nom</th>
+           <th>Capitale</th>
            <th>Population</th>
-           <th>Capital</th>
            <th>Drapeau</th>
          </tr>
-
        <?php
        // $desPays est un tableau dont les éléments sont des objets représentant
        // des caractéristiques d'un pays (en relation avec les colonnes de la table Country)
-          foreach ($desPays as $pays):?>
-           <tr> 
-        
-           
-            <td> <?php echo $pays->Name ?></td>
+          foreach ($desPays as $pays): ?> 
+          <tr>
+            <td> <a href ="<?php echo "detailPays.php?id="?><?php echo $pays->id ?>"><?php echo $pays->Name ?></a></td>
+            <td> <?php echo $pays->Capitale ?></td>
+
             <td> <?php echo $pays->Population ?></td>
-            <td><?php echo getCapital( $pays->Capital) ?></td>
-            <td><img src= images\png100px\<?php echo $pays->Code2?>.png></td> 
-            
-             </tr>
-        <?php endforeach ; ?>
-       
+            <td><img src =images\drapeau\drapeau\<?php echo $pays->Code2?>.png></td>
+            <?php endforeach ?>
      </table>
     </div>
     <p>
-       
+        <code>
+      <?php
+        var_dump($desPays[0]);
+        ?>
+        </code>
     </p>
     <section class="jumbotron">
       <div class="container">
