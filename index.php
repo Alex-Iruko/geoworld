@@ -48,7 +48,7 @@ $desPays = getCountriesByContinent($continent);
             <td> <?php echo $pays->Name ?></td>
             <td> <?php echo $pays->Population ?></td>
             <td><?php echo getCapital( $pays->Capital) ?></td>
-            <td><img src= images\4x3\<?php echo $pays->Code2?>.svg></td> 
+            <td><img src= images\png100px\<?php echo $pays->Code2?>.png></td> 
             
              </tr>
         <?php endforeach ; ?>

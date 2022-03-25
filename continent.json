@@ -1,0 +1,9 @@
+[
+{"code":"AF","name":"Africa","description":"The world's second largest and second most-populous continent (the first being Asia in both categories)"},
+{"code":"AN","name":"Antarctica","description":"Earth's southernmost continent. It contains the geographic South Pole and is situated in the Antarctic region of the Southern Hemisphere"},
+{"code":"AS","name":"Asia","description":"Earth's largest and most populous continent, located primarily in the Eastern and Northern Hemispheres"},
+{"code":"EU","name":"Europe","description":"A continent located entirely in the Northern Hemisphere and mostly in the Eastern Hemisphere"},
+{"code":"NA","name":"North America","description":"A continent entirely within the Northern Hemisphere and almost all within the Western Hemisphere"},
+{"code":"OC","name":"Oceania","description":"A continent comprising mainland Australia, Tasmania, New Guinea, Seram, possibly Timor, and neighbouring islands"},
+{"code":"SA","name":"South America","description":"A continent located in the western hemisphere, mostly in the southern hemisphere, with a relatively small portion in the northern hemisphere"}
+]
