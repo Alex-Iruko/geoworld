@@ -30,27 +30,13 @@ require_once 'connect-db.php';
  * 
  * @return array tableau d'objets (des pays)
  */
-function getContinent()
-{
-    // pour utiliser la variable globale dans la fonction
-    global $pdo;
-    $query = 'SELECT DISTINCT Continent FROM Country Order by continent ASC';
-    $prep = $pdo->prepare($query);
-    try { 
-        $result = $pdo->query($query)->fetchAll(); 
-        return $result;
-      }
-      catch ( Exception $e ) {
-        die ("erreur dans la requete ".$e->getMessage());
-      }
-}
 function getCountriesByContinent($continent)
 {
     // pour utiliser la variable globale dans la fonction
     global $pdo;
-    $query = 'SELECT country.id as id,country.name as Name, city.Name as Capitale, country.Population as Population, Code2 as Code2 
-    FROM country, city
-    WHERE country.Capital=city.id AND country.Continent=:cont;';
+    $query = 'SELECT*
+    FROM country
+    WHERE Continent=:cont;';
     $prep = $pdo->prepare($query);
     // on associe ici (bind) le paramètre (:cont) de la req SQL,
     // avec la valeur reçue en paramètre de la fonction ($continent)
@@ -64,29 +50,6 @@ function getCountriesByContinent($continent)
     // on retourne un tableau d'objets (car spécifié dans connect-db.php)
     return $prep->fetchAll();
 }
-function getDetailPays($id){
-  global $pdo;
-  $query ="SELECT country.Code as Code,country.Name as Nom,country.Continent as Continent, country.Region as Région,country.SurfaceArea as Surface, country.IndepYear as AnneeI, country.Population as Pop,
-   country.LifeExpectancy as EspVie,country.LocalName as NomL, country.GovernmentForm as TypeG
-  ,country.HeadOfState as ChefE,city.Name as Capitale, Code2 as Code2
-  FROM country, city
-  WHERE country.Capital=city.id and country.id=:id;";
-  $prep = $pdo->prepare($query);
-  $prep->bindValue(':id',$id, PDO::PARAM_INT);
-  $prep->execute();
-  return $prep->fetchAll();
-}
-function getLangue($id){
-  global $pdo;
-  $query ="SELECT language.Name as Langue
-  FROM country, city, countrylanguage,language
-  WHERE country.Capital=city.id and country.id=:id and country.id=countrylanguage.idCountry and countrylanguage.idLanguage=language.id
-  ORDER BY countrylanguage.IsOfficial;";
-  $prep = $pdo->prepare($query);
-  $prep->bindValue(':id',$id, PDO::PARAM_INT);
-  $prep->execute();
-  return $prep->fetchAll();
-}
 
 /**
  * Obtenir la liste des pays
@@ -99,3 +62,45 @@ function getAllCountries()
     $query = 'SELECT * FROM Country;';
     return $pdo->query($query)->fetchAll();
 }
+function getContinent()
+{
+    global $pdo;
+    $query = 'SELECT DISTINCT Continent FROM country;';
+    return $pdo -> query($query)->fetchAll();
+}
+function getCapital($id)
+{
+    global $pdo;
+    if(empty($id)){
+        echo("No City");
+    }
+    else{
+    $query= "SELECT city.Name FROM city WHERE id = :id ;";
+    $prep = $pdo->prepare($query);
+    $prep->bindValue(':id',$id, PDO::PARAM_STR);
+    $prep->execute();
+    return $prep->fetch()->Name;
+    }
+
+}
+function ajoutUtilisateur(){
+    global $pdo;
+    $name=$_GET['name'];
+    $username=$_GET['username'];
+    $identifier=$_GET['identifier'];
+    $password=$_GET['password'];
+    $ville=$_GET['ville'];
+    $date_birth=$_GET['date_birth'];
+    $dpt=$_GET['dpt'];
+    $role=$_GET['role'];
+    $requete = "INSERT INTO utilisateur (name, username, identifier, password, ville, date_birth, dpt, role) VALUES(:name, :username,:identifier,:password,:ville,:date_birth,:dpt,:role)";
+    $query = $pdo->prepare($requete);
+    $query->bindValue(':nom', $nom, PDO::PARAM_STR);
+    $query->bindValue(':prenom', $prenom, PDO::PARAM_STR);
+    $query->bindValue(':date_naissance', $date_naissance, PDO::PARAM_STR);
+    $query->bindValue(':date_embauche', $date_embauche, PDO::PARAM_STR);
+    $query->bindValue(':salaire', $salaire, PDO::PARAM_INT);
+    $query->bindValue(':service', $service, PDO::PARAM_STR);
+    $query->execute(array(':nom' => $nom, ':prenom' => $prenom, ':date_naissance' => $date_naissance, ':date_embauche' => $date_embauche, ':salaire' => $salaire, ':service' => $service, ':login' => $login, ':password' => $password, ':role' => $role));
+    echo "l'esclave a été ajouté avec succès vous pouvez l'exploiter ";
+    }
