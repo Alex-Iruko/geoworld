@@ -35,10 +35,17 @@
                 <label class="text-dark">Mot de passe : </label>
                 <input type="password" class="form-control" name="password" placeholder="Brakmar77!" required>
             </div>
-            <div class="form-group col-md-4">
-                <button type="submit" class="btn btn-success" style="margin-left:200px ;">Se connecter</button>
+            <div class="form-group col-md-3">
+                <button type="submit" class="btn btn-success" style="margin-left:150px ;">Se connecter</button>
             </div>   
         </form>
+        <div class="col">
+        <h5> Vous n'avez pas de compte ? Inscrivez-vous :</h1>
+        </h5>
+        <form action ="Inscription.php" method="GET">
+            <div class="form-group col-md-4">
+                <button type="submit" class="btn btn-success" style="margin-left:150px ;">S'inscrire</button>
+            </div> 
         <div class="invisible">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A diam sollicitudin tempor id. Convallis convallis tellus id interdum velit. Sit amet justo donec enim diam vulputate ut pharetra sit. Amet dictum sit amet justo donec. Commodo elit at imperdiet dui accumsan sit amet. Sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus. Non blandit massa enim nec. Purus gravida quis blandit turpis cursus in hac habitasse platea. Blandit massa enim nec dui nunc mattis. Ullamcorper malesuada proin libero nunc consequat.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A diam sollicitudin tempor id. Convallis convallis tellus id interdum velit. Sit amet justo donec enim diam vulputate ut pharetra sit. Amet dictum sit amet justo donec. Commodo elit at imperdiet dui accumsan sit amet. Sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus. Non blandit massa enim nec. Purus gravida quis blandit turpis cursus in hac habitasse platea. Blandit massa enim nec dui nunc mattis. Ullamcorper malesuada proin libero nunc consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A diam sollicitudin tempor id. Convallis convallis tellus id interdum velit. Sit amet justo donec enim diam vulputate ut pharetra sit. Amet dictum sit amet justo donec. Commodo elit at imperdiet dui accumsan sit amet. Sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus. Non blandit massa enim nec. Purus gravida quis blandit turpis cursus in hac habitasse platea. Blandit massa enim nec dui nunc mattis. Ullamcorper malesuada proin libero nunc consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A diam sollicitudin tempor id. Convallis convallis tellus id interdum velit. Sit amet justo donec enim diam vulputate ut pharetra sit. Amet dictum sit amet justo donec. Commodo elit at imperdiet dui accumsan sit amet. Sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus. Non blandit massa enim nec. Purus gravida quis blandit turpis cursus in hac habitasse platea. Blandit massa enim nec dui nunc mattis. Ullamcorper malesuada proin libero nunc consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A diam sollicitudin tempor id. C          
         </p>
