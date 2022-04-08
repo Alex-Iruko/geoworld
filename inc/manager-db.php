@@ -95,12 +95,27 @@ function ajoutUtilisateur(){
     $role=$_GET['role'];
     $requete = "INSERT INTO utilisateur (name, username, identifier, password, ville, date_birth, dpt, role) VALUES(:name, :username,:identifier,:password,:ville,:date_birth,:dpt,:role)";
     $query = $pdo->prepare($requete);
-    $query->bindValue(':nom', $nom, PDO::PARAM_STR);
-    $query->bindValue(':prenom', $prenom, PDO::PARAM_STR);
-    $query->bindValue(':date_naissance', $date_naissance, PDO::PARAM_STR);
-    $query->bindValue(':date_embauche', $date_embauche, PDO::PARAM_STR);
-    $query->bindValue(':salaire', $salaire, PDO::PARAM_INT);
-    $query->bindValue(':service', $service, PDO::PARAM_STR);
-    $query->execute(array(':nom' => $nom, ':prenom' => $prenom, ':date_naissance' => $date_naissance, ':date_embauche' => $date_embauche, ':salaire' => $salaire, ':service' => $service, ':login' => $login, ':password' => $password, ':role' => $role));
-    echo "l'esclave a été ajouté avec succès vous pouvez l'exploiter ";
-    }
+    $query->bindValue(':name', $name, PDO::PARAM_STR);
+    $query->bindValue(':username', $username, PDO::PARAM_STR);
+    $query->bindValue(':identifier', $identifier, PDO::PARAM_STR);
+    $query->bindValue(':password', $password, PDO::PARAM_STR);
+    $query->bindValue(':ville', $ville, PDO::PARAM_STR);
+    $query->bindValue(':date_birth', $date_birth, PDO::PARAM_STR);
+    $query->bindValue(':dpt', $dpt, PDO::PARAM_STR);
+    $query->bindValue(':role', $role, PDO::PARAM_STR);
+    $query->execute(array(':name' => $name, ':username' => $username, ':identifier' => $identifier, ':password' => $password, ':ville' => $ville, ':date_birth' => $date_birth, ':dpt' => $dpt, ':role' => $role));
+    echo "Bienvenue sur GeoWorld le meilleur site de l'univers by Killian , Alexandre et Quentin ;-)";
+}
+function getAuthentification($login,$pass){
+    global $pdo;
+    $query="SELECT * FROM utilisateur where identifier=:identifier and password=:password";
+    $prep=$pdo->prepare($query);
+    $prep->bindValue(':identifier',$identifier);
+    $prep->bindValue(':password',$password);
+    $prep->execute();
+    if($prep->rowCount()==1){
+      $result=$prep->fetch();
+      return $result;
+    }else
+      return false;
+}
