@@ -1,4 +1,4 @@
--- phpMyAdmin SQL Dump
+﻿-- phpMyAdmin SQL Dump
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
@@ -4391,7 +4391,14 @@ INSERT INTO `country` (`id`, `Code`, `Name`, `Continent`, `Region`, `SurfaceArea
 (236, 'YUG', 'Yugoslavia', 'Europe', 'Southern Europe', 102173.00, 1918, 10640000, 72.4, 17000.00, NULL, 'Jugoslavija', 'Federal Republic', 'Vojislav Koštunica', 1792, 'YU'),
 (237, 'ZAF', 'South Africa', 'Africa', 'Southern Africa', 1221037.00, 1910, 40377000, 51.1, 116729.00, 129092.00, 'South Africa', 'Republic', 'Thabo Mbeki', 716, 'ZA'),
 (238, 'ZMB', 'Zambia', 'Africa', 'Eastern Africa', 752618.00, 1964, 9169000, 37.2, 3377.00, 3922.00, 'Zambia', 'Republic', 'Frederick Chiluba', 3162, 'ZM'),
-(239, 'ZWE', 'Zimbabwe', 'Africa', 'Eastern Africa', 390757.00, 1980, 11669000, 37.8, 5951.00, 8670.00, 'Zimbabwe', 'Republic', 'Robert G. Mugabe', 4068, 'ZW');
+(239, 'ZWE', 'Zimbabwe', 'Africa', 'Eastern Africa', 390757.00, 1980, 11669000, 37.8, 5951.00, 8670.00, 'Zimbabwe', 'Republic', 'Robert G. Mugabe', 4068, 'ZW'),
+(240, 'XKX', 'Kosovo','Europe', 'Eastern Europe', 10887, 2008, 1873000, 76.5, 7798.000, 5000.000, 'Kosovo', 'Republic', 'Vjosa Osmani', '667', 'XK'),
+(241, 'KWT', 'Koweit','Asia', 'Middle East', 17818, 1961, 1873000, 76.5, 7798.000, 5000.000, 'Koweit', 'Monarchy', 'killain', '667', 'KW'),
+(242, 'MNE', 'Monténégro','Europe', 'Eastern Europe', 10887, 2008, 2993706, 78.3, 7798.000, 5000.000, 'Kosovo', 'Republic', 'Vjosa Osmani', '668', 'XK'),
+(243, 'MKD', 'Macédoine du nord','Europe', 'Eastern Europe', 10887, 2008, 1873000, 76.5, 7798.000, 5000.000, 'Kosovo', 'Republic', 'Vjosa Osmani', '667', 'XK'),
+(244, 'SRB', 'Serbie','Europe', 'Eastern Europe', 10887, 2008, 1873000, 76.5, 7798.000, 5000.000, 'Kosovo', 'Republic', 'Vjosa Osmani', '667', 'XK'),
+(245, 'SSD', 'Soudan du sud','Africa', 'Eastern Europe', 10887, 2008, 1873000, 76.5, 7798.000, 5000.000, 'Kosovo', 'Republic', 'Vjosa Osmani', '667', 'XK'),
+(246, 'SWZ', 'Eswatini','Afica', 'Eastern Europe', 10887, 2008, 1873000, 76.5, 7798.000, 5000.000, 'Kosovo', 'Republic', 'Vjosa Osmani', '667', 'XK');
 
 -- --------------------------------------------------------
 
