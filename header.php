@@ -52,7 +52,7 @@ require_once 'inc/manager-db.php';
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="map.php">Link</a>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" href="#">Disabled</a>
@@ -62,7 +62,7 @@ require_once 'inc/manager-db.php';
              aria-expanded="false">Continent</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
             <?php foreach ($lesContinent as $continent):?>
-            <a class="dropdown-item" href="/geoworld-master/index.php?Continent=<?php echo $continent->Continent ?>"><?php echo $continent->Continent?></a>
+            <a class="dropdown-item" href="/geoworld-main/index.php?Continent=<?php echo $continent->Continent ?>"><?php echo $continent->Continent?></a>
             <?php endforeach ;?>
             
 
@@ -71,10 +71,10 @@ require_once 'inc/manager-db.php';
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="login">Login</a>
+          <a class="nav-link" href="login.php">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="register">Register</a>
+          <a class="nav-link" href="Inscription.php">Register</a>
         </li>
         <li class="nav-item">
           <a class="nav-link " href="todo-projet.php">
