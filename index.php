@@ -46,7 +46,7 @@ $desPays = getCountriesByContinent($continent);
             <td> <?php echo $pays->Capitale ?></td>
 
             <td> <?php echo $pays->Population ?></td>
-            <td><img src =images\drapeau\drapeau\<?php echo $pays->Code2?>.png></td>
+            <td><img src =images\drapeau\<?php echo $pays->Code2?>.png></td>
             <?php endforeach ?>
      </table>
     </div>
