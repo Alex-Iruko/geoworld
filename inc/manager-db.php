@@ -34,9 +34,9 @@ function getCountriesByContinent($continent)
 {
     // pour utiliser la variable globale dans la fonction
     global $pdo;
-    $query = 'SELECT*
-    FROM country
-    WHERE Continent=:cont;';
+    $query = 'SELECT country.id as id, country.Name as Name, city.Name as Capitale, country.Population, country.Code2 as Code2
+    FROM country, city
+    WHERE country.Capital=city.id  And Continent=:cont;';
     $prep = $pdo->prepare($query);
     // on associe ici (bind) le paramètre (:cont) de la req SQL,
     // avec la valeur reçue en paramètre de la fonction ($continent)
@@ -75,7 +75,7 @@ function getCapital($id)
         echo("No City");
     }
     else{
-    $query= "SELECT city.Name FROM city WHERE id = :id ;";
+    $query= "SELECT city.Name as Ville FROM city WHERE id = :id ;";
     $prep = $pdo->prepare($query);
     $prep->bindValue(':id',$id, PDO::PARAM_STR);
     $prep->execute();
@@ -118,4 +118,26 @@ function getAuthentification($login,$pass){
       return $result;
     }else
       return false;
-}
+}function getDetailPays($id){
+    global $pdo;
+    $query ="SELECT country.Code as Code,country.Name as Nom,country.Continent as Continent, country.Region as Région,country.SurfaceArea as Surface, country.IndepYear as AnneeI, country.Population as Pop,
+     country.LifeExpectancy as EspVie,country.LocalName as NomL, country.GovernmentForm as TypeG
+    ,country.HeadOfState as ChefE,city.Name as Capitale, Code2 as Code2
+    FROM country, city
+    WHERE country.Capital=city.id and country.id=:id;";
+    $prep = $pdo->prepare($query);
+    $prep->bindValue(':id',$id, PDO::PARAM_INT);
+    $prep->execute();
+    return $prep->fetchAll();
+}function getLangue($id){
+    global $pdo;
+    $query ="SELECT language.Name as Langue
+    FROM country, city, countrylanguage,language
+    WHERE country.Capital=city.id and country.id=:id and country.id=countrylanguage.idCountry and countrylanguage.idLanguage=language.id
+    ORDER BY countrylanguage.IsOfficial;";
+    $prep = $pdo->prepare($query);
+    $prep->bindValue(':id',$id, PDO::PARAM_INT);
+    $prep->execute();
+    return $prep->fetchAll();
+  }
+  ?>
