@@ -85,33 +85,31 @@ function getCapital($id)
 }
 function ajoutUtilisateur(){
     global $pdo;
-    $name=$_GET['name'];
-    $username=$_GET['username'];
-    $identifier=$_GET['identifier'];
+    $prenom=$_GET['prenom'];
+    $nom=$_GET['nom'];
+    $user=$_GET['user'];
     $password=$_GET['password'];
     $ville=$_GET['ville'];
     $date_birth=$_GET['date_birth'];
     $dpt=$_GET['dpt'];
-    $role=$_GET['role'];
-    $requete = "INSERT INTO utilisateur (name, username, identifier, password, ville, date_birth, dpt, role) VALUES(:name, :username,:identifier,:password,:ville,:date_birth,:dpt,:role)";
+    $requete = "INSERT INTO login (prenom, nom, user, password, ville, date_n, dpt) VALUES(:prenom, :nom,:user,:password,:ville,:date_birth,:dpt)";
     $query = $pdo->prepare($requete);
-    $query->bindValue(':name', $name, PDO::PARAM_STR);
-    $query->bindValue(':username', $username, PDO::PARAM_STR);
-    $query->bindValue(':identifier', $identifier, PDO::PARAM_STR);
+    $query->bindValue(':prenom', $prenom, PDO::PARAM_STR);
+    $query->bindValue(':nom', $nom, PDO::PARAM_STR);
+    $query->bindValue(':user', $user, PDO::PARAM_STR);
     $query->bindValue(':password', $password, PDO::PARAM_STR);
     $query->bindValue(':ville', $ville, PDO::PARAM_STR);
     $query->bindValue(':date_birth', $date_birth, PDO::PARAM_STR);
     $query->bindValue(':dpt', $dpt, PDO::PARAM_STR);
-    $query->bindValue(':role', $role, PDO::PARAM_STR);
-    $query->execute(array(':name' => $name, ':username' => $username, ':identifier' => $identifier, ':password' => $password, ':ville' => $ville, ':date_birth' => $date_birth, ':dpt' => $dpt, ':role' => $role));
+    $query->execute(array(':prenom' => $prenom, ':nom' => $nom, ':user' => $user, ':password' => $password, ':ville' => $ville, ':date_birth' => $date_birth, ':dpt' => $dpt));
     echo "Bienvenue sur GeoWorld le meilleur site de l'univers by Killian , Alexandre et Quentin ;-)";
 }
 function getAuthentification($login,$pass){
     global $pdo;
-    $query="SELECT * FROM utilisateur where identifier=:identifier and password=:password";
+    $query="SELECT * FROM login where user=:login and password=:pass";
     $prep=$pdo->prepare($query);
-    $prep->bindValue(':identifier',$identifier);
-    $prep->bindValue(':password',$password);
+    $prep->bindValue(':login',$login);
+    $prep->bindValue(':pass',$pass);
     $prep->execute();
     if($prep->rowCount()==1){
       $result=$prep->fetch();
