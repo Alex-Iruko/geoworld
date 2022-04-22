@@ -71,12 +71,6 @@ require_once 'inc/manager-db.php';
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="login.php">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Inscription.php">Register</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link " href="todo-projet.php">
             Présentation-Atelier-de-Prof-SLAM
           </a>
