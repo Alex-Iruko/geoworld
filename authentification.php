@@ -29,11 +29,11 @@
         <form action="login.php" method="post">
         <div class="form-group col-md-4">
                 <label class="text-dark">Identifiant : </label>
-                <input type="text" class="form-control" name="identifier" placeholder="DarkTitouan77310" required>
+                <input type="text" class="form-control" name="user" placeholder="DarkTitouan77310" required>
             </div>
             <div class="form-group col-md-4">
                 <label class="text-dark">Mot de passe : </label>
-                <input type="password" class="form-control" name="password" placeholder="Brakmar77!" required>
+                <input type="password" class="form-control" name="pwd" placeholder="*******" required>
             </div>
             <div class="form-group col-md-3">
                 <button type="submit" class="btn btn-success" style="margin-left:150px ;">Se connecter</button>
@@ -47,7 +47,28 @@
                 <button type="submit" class="btn btn-success" style="margin-left:150px ;">S'inscrire</button>
             </div> 
         <div class="invisible">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A diam sollicitudin tempor id. Convallis convallis tellus id interdum velit. Sit amet justo donec enim diam vulputate ut pharetra sit. Amet dictum sit amet justo donec. Commodo elit at imperdiet dui accumsan sit amet. Sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus. Non blandit massa enim nec. Purus gravida quis blandit turpis cursus in hac habitasse platea. Blandit massa enim nec dui nunc mattis. Ullamcorper malesuada proin libero nunc consequat.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A diam sollicitudin tempor id. Convallis convallis tellus id interdum velit. Sit amet justo donec enim diam vulputate ut pharetra sit. Amet dictum sit amet justo donec. Commodo elit at imperdiet dui accumsan sit amet. Sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus. Non blandit massa enim nec. Purus gravida quis blandit turpis cursus in hac habitasse platea. Blandit massa enim nec dui nunc mattis. Ullamcorper malesuada proin libero nunc consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A diam sollicitudin tempor id. Convallis convallis tellus id interdum velit. Sit amet justo donec enim diam vulputate ut pharetra sit. Amet dictum sit amet justo donec. Commodo elit at imperdiet dui accumsan sit amet. Sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus. Non blandit massa enim nec. Purus gravida quis blandit turpis cursus in hac habitasse platea. Blandit massa enim nec dui nunc mattis. Ullamcorper malesuada proin libero nunc consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A diam sollicitudin tempor id. Convallis convallis tellus id interdum velit. Sit amet justo donec enim diam vulputate ut pharetra sit. Amet dictum sit amet justo donec. Commodo elit at imperdiet dui accumsan sit amet. Sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus. Non blandit massa enim nec. Purus gravida quis blandit turpis cursus in hac habitasse platea. Blandit massa enim nec dui nunc mattis. Ullamcorper malesuada proin libero nunc consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A diam sollicitudin tempor id. C          
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            A diam sollicitudin tempor id. Convallis convallis tellus id interdum velit. Sit amet justo donec enim diam vulputate ut pharetra sit.
+             Amet dictum sit amet justo donec. Commodo elit at imperdiet dui accumsan sit amet. Sociis natoque penatibus et magnis dis parturient
+              montes nascetur ridiculus. Non blandit massa enim nec. Purus gravida quis blandit turpis cursus in hac habitasse platea. B
+              landit massa enim nec dui nunc mattis. Ullamcorper malesuada proin libero nunc consequat.  Lorem ipsum dolor sit amet, 
+              consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A diam sollicitudin tempor
+               id. Convallis convallis tellus id interdum velit. Sit amet justo donec enim diam vulputate ut pharetra sit. Amet dictum 
+               sit amet justo donec. Commodo elit at imperdiet dui accumsan sit amet. Sociis natoque penatibus et magnis dis parturient
+                montes nascetur ridiculus. Non blandit massa enim nec. Purus gravida quis blandit turpis cursus in hac habitasse platea
+                . Blandit massa enim nec dui nunc mattis. Ullamcorper malesuada proin libero nunc consequat.Lorem ipsum dolor sit amet
+                , consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A diam sollicitudin 
+                tempor id. Convallis convallis tellus id interdum velit. Sit amet justo donec enim diam vulputate ut pharetra sit. Ame
+                t dictum sit amet justo donec. Commodo elit at imperdiet dui accumsan sit amet. Sociis natoque penatibus et magnis dis
+                 parturient montes nascetur ridiculus. Non blandit massa enim nec. Purus gravida quis blandit turpis cursus in hac hab
+                 itasse platea. Blandit massa enim nec dui nunc mattis. Ullamcorper malesuada proin libero nunc consequat.Lorem ipsum 
+                 dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A dia
+                 m sollicitudin tempor id. Convallis convallis tellus id interdum velit. Sit amet justo donec enim diam vulputate ut p
+                 haretra sit. Amet dictum sit amet justo donec. Commodo elit at imperdiet dui accumsan sit amet. Sociis natoque penati
+                 bus et magnis dis parturient montes nascetur ridiculus. Non blandit massa enim nec. Purus gravida quis blandit turpis
+                  cursus in hac habitasse platea. Blandit massa enim nec dui nunc mattis. Ullamcorper malesuada proin libero nunc cons
+                  equat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+                  magna aliqua. A diam sollicitudin tempor id. C          
         </p>
         </div>
     </body>
