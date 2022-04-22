@@ -1,4 +1,15 @@
 <?php
+require_once 'inc/manager-db.php';
+  // On récupère la session
+  session_start ();
+  // On teste pour voir si nos variables de session ont bien été enregistrées
+  if (isset($_SESSION['user']) && isset($_SESSION['role'])) {
+  echo "<p style=text-align:right;>Bienvenue ".strtoupper($_SESSION['user'])." "."(".$_SESSION['role'].")";
+  echo '<br><a href="./logout.php">Deconnexion</a></p>';
+  }
+  else
+  header ('location: authentification.php'); 
+  ?> <?php
 /**
  * Home Page
  *
@@ -14,8 +25,7 @@
 
 ?>
 <?php  require_once 'header.php'; ?>
-<?php
-require_once 'inc/manager-db.php';
+  <?php
 if (empty($_GET['Continent'])){
   $continent='Asia';
 }else{
@@ -24,7 +34,6 @@ if (empty($_GET['Continent'])){
 $desPays = getCountriesByContinent($continent);
 //$capitales= getCapital($continent)
 ?>
-
 <main role="main" class="flex-shrink-0">
 
   <div class="container">
@@ -36,6 +45,9 @@ $desPays = getCountriesByContinent($continent);
            <th>Capitale</th>
            <th>Population</th>
            <th>Drapeau</th>
+            <th><?php if ($_SESSION['role']=="Admin"|| $_SESSION['role']=="Professeur"):?>
+              <?php echo "Edit"?>
+            <?php endif?></th>
          </tr>
        <?php
        // $desPays est un tableau dont les éléments sont des objets représentant
@@ -47,6 +59,9 @@ $desPays = getCountriesByContinent($continent);
 
             <td> <?php echo $pays->Population ?></td>
             <td><img src =images\drapeau\<?php echo $pays->Code2?>.png></td>
+            <td><?php if ($_SESSION['role']=="Admin" || $_SESSION['role']=="Professeur"):?>
+              <a href="<?php echo "formulaireUpdatePays.php?id="?><?php echo $pays->id?>"><?php echo "Edit" ?></a></td>
+              <?php endif?>
             <?php endforeach ?>
      </table>
     </div>
