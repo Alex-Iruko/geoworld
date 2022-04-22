@@ -58,9 +58,9 @@ $desPays = getCountriesByContinent($continent);
             <td> <?php echo $pays->Capitale ?></td>
 
             <td> <?php echo $pays->Population ?></td>
-            <td><img src =images\drapeau\<?php echo $pays->Code2?>.png></td>
+            <td><img src =images\png100px\<?php echo $pays->Code2?>.png></td>
             <td><?php if ($_SESSION['role']=="Admin" || $_SESSION['role']=="Professeur"):?>
-              <a href="<?php echo "formulaireUpdatePays.php?id="?><?php echo $pays->id?>"><?php echo "Edit" ?></a></td>
+              <a href="<?php echo "UpdatePays.php?id="?><?php echo $pays->id?>"><?php echo "Edit" ?></a></td>
               <?php endif?>
             <?php endforeach ?>
      </table>
