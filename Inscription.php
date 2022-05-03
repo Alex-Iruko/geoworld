@@ -9,7 +9,7 @@
 require_once("header.php");
 ?>
 <body class="bg-white">
-	<form action="result.php"method="get">
+	<form action="result.php"method="post">
   <div class="form-group col-md-4">
                 <label class="text-dark">Nom : </label>
                 <input type="text" class="form-control" name="Nom" placeholder="dupont" required>
@@ -50,7 +50,7 @@ require_once("header.php");
 		            <option></option>
 		            <option>Eleve</option>
                     <option>Professeur</option>
-                    <option>Administrateur</option>
+                    <option>Admin</option>
 	            </select>
             </div>
             <div class="form-group col-md-4">
