@@ -85,23 +85,24 @@ function getCapital($id)
 }
 function ajoutUtilisateur(){
     global $pdo;
-    $prenom=$_GET['prenom'];
-    $nom=$_GET['nom'];
+    $Prenom=$_GET['Prenom'];
+    $Nom=$_GET['Nom'];
     $user=$_GET['user'];
     $password=$_GET['password'];
-    $ville=$_GET['ville'];
-    $date_birth=$_GET['date_birth'];
-    $dpt=$_GET['dpt'];
-    $requete = "INSERT INTO login (prenom, nom, user, password, ville, date_n, dpt) VALUES(:prenom, :nom,:user,:password,:ville,:date_birth,:dpt)";
+    $Ville=$_GET['Ville'];
+    $Date_n=$_GET['Date_n'];
+    $Dpt=$_GET['Dpt'];
+    $role=$_GET['role'];
+    $requete = "INSERT INTO login (Prenom, Nom, user, password, Ville, Date_n, Dpt, role) VALUES(:Prenom, :Nom,:user,:password,:Ville,:Date_n,:Dpt, :role)";
     $query = $pdo->prepare($requete);
-    $query->bindValue(':prenom', $prenom, PDO::PARAM_STR);
-    $query->bindValue(':nom', $nom, PDO::PARAM_STR);
+    $query->bindValue(':Prenom', $Prenom, PDO::PARAM_STR);
+    $query->bindValue(':Nom', $Nom, PDO::PARAM_STR);
     $query->bindValue(':user', $user, PDO::PARAM_STR);
     $query->bindValue(':password', $password, PDO::PARAM_STR);
-    $query->bindValue(':ville', $ville, PDO::PARAM_STR);
-    $query->bindValue(':date_birth', $date_birth, PDO::PARAM_STR);
-    $query->bindValue(':dpt', $dpt, PDO::PARAM_STR);
-    $query->execute(array(':prenom' => $prenom, ':nom' => $nom, ':user' => $user, ':password' => $password, ':ville' => $ville, ':date_birth' => $date_birth, ':dpt' => $dpt));
+    $query->bindValue(':Ville', $Ville, PDO::PARAM_STR);
+    $query->bindValue(':Date_n', $Date_n, PDO::PARAM_STR);
+    $query->bindValue(':Dpt', $Dpt, PDO::PARAM_STR);
+    $query->execute(array(':Prenom' => $Prenom, ':Nom' => $Nom, ':user' => $user, ':password' => $password, ':Ville' => $Ville, ':Date_n' => $Date_n, ':Dpt' => $Dpt, ':role' => $role));
     echo "Bienvenue sur GeoWorld le meilleur site de l'univers by Killian , Alexandre et Quentin ;-)";
 }
 function getAuthentification($login,$pass){
@@ -137,5 +138,22 @@ function getAuthentification($login,$pass){
     $prep->bindValue(':id',$id, PDO::PARAM_INT);
     $prep->execute();
     return $prep->fetchAll();
+  }
+function updatePays($params){
+    global $pdo;
+    $requete = "UPDATE country SET Code=:Code,Name=:Name,LocalName=:LocalName,SurfaceArea=:SurfaceArea,IndepYear=:IndepYear,Population=:Population,LifeExpectancy=:LifeExpectancy,GovernementForm=:GovernementForm,HeadOfState=:HeadOfState WHERE id =:id";
+    $prep = $pdo->prepare($requete);
+    $prep->bindValue(':id', $params['id']);
+    $prep->bindValue(':Code', $params['Code']);
+    $prep->bindValue(':Name', $params['Name']);
+    $prep->bindValue(':LocalName', $params['LocalName']);
+    $prep->bindValue(':SurfaceArea', $params['SurfaceArea']);
+    $prep->bindValue(':IndepYear', $params['IndepYear']);
+    $prep->bindValue(':Population', $params['Population']);
+    $prep->bindValue(':LifeExpectancy', $params['LifeExpectancy']);
+    $prep->bindValue(':GovernementForm', $params['GovernementForm']);
+    $prep->bindValue(':HeadOfState', $params['HeadOfState']);
+    $prep->execute();
+    echo "Bienvenue sur GeoWorld le meilleur site de l'univers by Killian , Alexandre et Quentin ;-)";
   }
   ?>
