@@ -12,15 +12,15 @@ require_once("header.php");
 	<form action="result.php"method="get">
   <div class="form-group col-md-4">
                 <label class="text-dark">Nom : </label>
-                <input type="text" class="form-control" name="name" placeholder="dupont" required>
+                <input type="text" class="form-control" name="Nom" placeholder="dupont" required>
             </div>
             <div class="form-group col-md-4">
                 <label class="text-dark">Prenom : </label>
-                <input type="text" class="form-control" name="username" placeholder="dupont" required>
+                <input type="text" class="form-control" name="Prenom" placeholder="dupont" required>
             </div>
             <div class="form-group col-md-4">
                 <label class="text-dark">Identifiant : </label>
-                <input type="text" class="form-control" name="identifier" placeholder="DarkTitouan77310" required>
+                <input type="text" class="form-control" name="user" placeholder="DarkTitouan77310" required>
             </div>
             <div class="form-group col-md-4">
                 <label class="text-dark">Mot de passe : </label>
@@ -28,117 +28,20 @@ require_once("header.php");
             </div>
             <div class="form-group col-md-4">
                 <label class="text-dark">Ville : </label>
-                <input type="text" class="form-control" name="ville" placeholder="Saint-Fargeau-Ponthierry" required>
+                <input type="text" class="form-control" name="Ville" placeholder="Saint-Fargeau-Ponthierry" required>
             </div>
             <div class="form-group col-md-4">
                 <label class="text-dark">Date de naissance : </label>
-                <input type="date" class="form-control" name="date_birth" min="1900-01-01" max="2100-12-31" value="1900-12-31">
+                <input type="date" class="form-control" name="Date_n" min="1900-01-01" max="2100-12-31" value="1900-12-31">
             </div>
             <div class="form-group col-md-4">
                 <label class="text-dark">Departement : </label>
                 <p></p>
-                <select name="dpt" class="form-control">
-                    <option>Ain</option> 
-                    <option>Aisne</option> 
-                    <option>Allier</option> 
-                    <option>Alpes-de-Haute-Provence</option> 
-                    <option>Hautes-Alpes</option> 
-                    <option>Alpes-Maritimes</option> 
-                    <option>Ardèche</option> 
-                    <option>Ardennes</option> 
-                    <option>Ariège</option> 
-                    <option>Aube</option> 
-                    <option>Aude</option> 
-                    <option>Aveyron</option> 
-                    <option>Bouches-du-Rhône</option> 
-                    <option>Calvados</option> 
-                    <option>Cantal</option> 
-                    <option>Charente</option> 
-                    <option>Charente-Maritime</option> 
-                    <option>Cher</option> 
-                    <option>Corrèze</option> 
-                    <option>Côte-d'Or</option> 
-                    <option>Côtes-d'Armor</option> 
-                    <option>Creuse</option> 
-                    <option>Dordogne</option> 
-                    <option>Doubs</option> 
-                    <option>Drôme</option> 
-                    <option>Eure</option> 
-                    <option>Eure-et-Loir</option> 
-                    <option>Finistère</option> 
-                    <option>Corse-du-Sud</option> 
-                    <option>Haute-Corse</option> 
-                    <option>Gard</option> 
-                    <option>Haute-Garonne</option> 
-                    <option>Gers</option> 
-                    <option>Gironde</option> 
-                    <option>Hérault</option> 
-                    <option>Ille-et-Vilaine</option> 
-                    <option>Indre</option> 
-                    <option>Indre-et-Loire</option> 
-                    <option>Isère</option> 
-                    <option>Jura</option> 
-                    <option>Landes</option> 
-                    <option>Loir-et-Cher</option> 
-                    <option>Loire</option> 
-                    <option>Haute-Loire</option> 
-                    <option>Loire-Atlantique</option> 
-                    <option>Loiret</option> 
-                    <option>Lot</option> 
-                    <option>Lot-et-Garonne</option> 
-                    <option>Lozère</option> 
-                    <option>Maine-et-Loire</option> 
-                    <option>Manche</option> 
-                    <option>Marne</option> 
-                    <option>Haute-Marne</option> 
-                    <option>Mayenne</option> 
-                    <option>Meurthe-et-Moselle</option> 
-                    <option>Meuse</option> 
-                    <option>Morbihan</option> 
-                    <option>Moselle</option> 
-                    <option>Nièvre</option> 
-                    <option>Nord</option> 
-                    <option>Oise</option> 
-                    <option>Orne</option> 
-                    <option>Pas-de-Calais</option> 
-                    <option>Puy-de-Dôme</option> 
-                    <option>Pyrénées-Atlantiques</option> 
-                    <option>Hautes-Pyrénées</option> 
-                    <option>Pyrénées-Orientales</option> 
-                    <option>Bas-Rhin</option> 
-                    <option>Haut-Rhin</option> 
-                    <option>Rhône</option> 
-                    <option>Haute-Saône</option> 
-                    <option>Saône-et-Loire</option> 
-                    <option>Sarthe</option> 
-                    <option>Savoie</option> 
-                    <option>Haute-Savoie</option> 
-                    <option>Paris</option> 
-                    <option>Seine-Maritime</option> 
-                    <option>Seine-et-Marne</option> 
-                    <option>Yvelines</option> 
-                    <option>Deux-Sèvres</option> 
-                    <option>Somme</option> 
-                    <option>Tarn</option> 
-                    <option>Tarn-et-Garonne</option> 
-                    <option>Var</option> 
-                    <option>Vaucluse</option> 
-                    <option>Vendée</option> 
-                    <option>Vienne</option> 
-                    <option>Haute-Vienne</option> 
-                    <option>Vosges</option> 
-                    <option>Yonne</option> 
-                    <option>Territoire de Belfort</option> 
-                    <option>Essonne</option> 
-                    <option>Hauts-de-Seine</option> 
-                    <option>Seine-Saint-Denis</option> 
-                    <option>Val-de-Marne</option> 
-                    <option>Val-d'Oise</option> 
-                    <option>Guadeloupe</option> 
-                    <option>Martinique</option> 
-                    <option>Guyane</option> 
-                    <option>La Réunion</option> 
-                    <option>Mayotte</option> 
+                <select name="Dpt" class="form-control">
+                    <?php for($i= 1; $i<= 974; $i++){
+                        echo "<option>$i</option>";
+                    }
+                    ?>
                 </select>
             </div>
             <div class="form-group col-md-4">
