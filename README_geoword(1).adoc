@@ -1,0 +1,92 @@
+= GeoWorld
+:author: Killian Belliot  Alexandre Poirier Quentin Ayral
+:docdate: 2022-05-03
+:asciidoctor-version:1.1
+:description: Compte rendu du Projet GeoWorld
+:toc-title: Table des matières
+:toc: left
+:toclevels: 5
+:listing-caption: Listing
+:icons: font
+
+== Présentation
+Ce projet a été réalisé par Killian BELLIOT, Quentin AYRAL et Alexandre POIRIER et rendu le 3 mai 2022.
+
+== Contexte
+L'application est destinée à des professeurs d'histoire et de géographie. Elle doit permettre aux professeurs, comme aux élèves, de consulter des données géopolitiques et économiques de la planète. Ces données ont été communiquées par l'institut Official Statistics of Finland (2006).
+Étant donné l'âge de ces données, il faudra mettre en place un (ou plusieurs) moyen(s) de les mettre à jour. Les acteurs et leurs intérêts :
+
+* Enseignant : souhaite sensibiliser ses élèves à des données géopolitiques et économiques de la planète
+
+* Élève : aimerait disposer d'un outil qui réponde à ses interrogations ainsi que prendre plaisir à consulter les informations présentées
+
+* Administrateur : disposer d'une interface d'administration de l'application (gestion des utilisateurs, leurs droits)
+
+image::\assets\img\useCaseWorld.png[]
+
+== Prérequis
+
+* Base de PHP
+* Base de SQL
+* Base de HTML/CSS
+
+== Prétention du projet
+
+* Apprendre à travailler sur la base d'un existant simple
+* Apprendre à respecter des conventions de codage
+* Initier à une architecture 3 tiers Web simple
+* Développer la créativité
+* Un peu de méthodologie (user story, trello, phpcs, ...)
+
+== Limite du projet
+
+* Pas d'usage de framework pour la structuration du projet
+* Pas de prise en compte de la sécurité au début du projet
+* Pas une initiation au gestionnaire de version `git` non plus
+* Pas de problématique de déploiement (à dockeriser ?)
+
+== La base de données
+La base de données qui nous a été fournie est structuré de la façon suivante:
+
+image::\assets\img\worldSR.png[]
+
+== Les rôles
+Pour les Rôles nous avous du ajouter dans le fichier `Inscription.php`, la possibilité de choisir entre 3 roles:
+
+* Eleve
+* Professeur
+* Admin
+-----
+<label class="text-dark"> Rôle : </label>
+<select class="form-control" name="role" required>
+<option> Eleve </option>
+<option> Professeur </option>
+<option> Admin </option>
+</select>
+-----
+Ce que nous avons aussi fait, c'est de faire en sort que les profs et les admins puissent mettre à jour les données. Pour cela dans le fichier `index.php` nous avons ajouté :
+-----
+<td><?php if ($_SESSION['role']=="Admin" || $_SESSION['role']=="Professeur"):?>
+<a href="<?php echo "UpdatePays.php?id="?><?php echo $pays->id?>"><?php echo "Edit" ?></a>
+<?php endif?></td>
+-----
+Lorsque nous arrivons la premiere fois sur l'application nous sommes dirigés vers la page de connexion :
+
+image::\assets\img\loginGeo.png[]
+
+Sur la page principale nous avons la liste de tous les pays, si nous sommes admin nous avons la possibilité d'éditer les informations du pays sélectionné :
+
+image::assets/img/homeAdmin.png[]
+image::assets/img/homeUser.PNG[]
+
+Nous avons aussi la possibilité de cliqué sur le nom du pays pour afficher ses informations :
+
+image::assets/img/detailPays.PNG[]
+
+Nous pouvons aussi afficher le planisphère pour sélectionner un pays :
+
+image::assets/img/Capturemap.PNG[]
+
+== Lien
+
+GitHub : https://github.com/Alex-Iruko/geoworld
